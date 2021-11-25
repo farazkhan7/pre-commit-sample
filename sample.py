@@ -3,8 +3,6 @@ This module contains the sample functions
 """
 from datetime import date
 
-print("Beginning of a new file")
-
 
 def greet_me_with_date(name):
     """Greets user with current date
