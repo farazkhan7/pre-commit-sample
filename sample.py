@@ -23,8 +23,8 @@ def greet_me_with_date(name):
         A greeting message that combines the user's name with current date
 
     """
-    finalstr = f"Hi {name}! Today's date is {date.today()}"
-    return finalstr
+    final_str = f"Hi {name}! Today's date is {date.today()}"
+    return final_str
 
 
-print(greet_me_with_date("Faraz"))
+print(greet_me_with_date("John Doe"))
