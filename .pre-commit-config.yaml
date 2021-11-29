@@ -34,4 +34,5 @@ repos:
           entry: pylint
           language: system
           types: [python]
-          args: ["--max-line-length=80", "--disable=E1101,R0912"]
+          args: ["--max-line-length=80", "--disable=E1101,R0912",
+                 "--ignore=doc"]
