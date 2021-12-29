@@ -12,12 +12,22 @@ repos:
       -   id: black
           language: python
           types: [python]
+          exclude: ^.*\b(migrations)\b.*$
+          #          Ignore multiple dirs from pre-commit level
+          #          exclude: |
+          #                (?x)^(
+          #                    ^.*\b(migrations)\b.*$|
+          #                    ^.*\b(tests)\b.*$
+          #                )$
+
+          #          args: ["--line-length=80"]
 #          args: ["--line-length=80"]
   -   repo: https://github.com/pycqa/isort
       rev: 5.10.1
       hooks:
       -   id: isort
           name: isort (python)
+          args: ["--profile", "black", "--filter-files"]
   -   repo: https://gitlab.com/pycqa/flake8
       rev: 3.7.9
       hooks:
@@ -34,5 +44,4 @@ repos:
           entry: pylint
           language: system
           types: [python]
-          args: ["--max-line-length=80", "--disable=E1101,R0912",
-                 "--ignore=doc"]
+          args: ["--max-line-length=80", "--disable=E1101,R0912"]
