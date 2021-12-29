@@ -58,7 +58,7 @@ git add .
 ```
 
 Now the pre-commit script will check your project's formatting when you attempt
-to commit your code. Commit is approved only when the pre-commit script finds your
+to commit your code with `git commit`. Commit is approved only when the pre-commit script finds your
 code well formatted and documented.
 
 Note: You can also run the pre-commit script without attempting to commit (for test purposes).
@@ -66,3 +66,7 @@ Use the command below to run the pre-commit script manually.
 ```
 pre-commit run --all-files
 ```
+
+Important Note: Sometimes when you commit your code, black or isort could make changes to your files
+making them unstaged, specially when the commit failed on pre-commit checks. In such case, you
+need to stage those files back with `git add` and then commit again with `git commit`
