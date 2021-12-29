@@ -21,4 +21,8 @@
     )/
 '''
 [tool.pylint.MASTER]
-ignore-paths = [ ".*/docs", ".*/tests" ]
+ignore-paths = [ ".*/docs", ".*/*tests" ]
+
+# ".*/docs" - ignores 'docs' dir only if it exists inside any number of directories
+# ".*/*tests" - ignores 'tests' dir wherever it exists including the project root
+# "docs/.*" - ignores 'docs' dir only if it exists in the project root
