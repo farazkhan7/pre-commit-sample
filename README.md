@@ -15,6 +15,16 @@ quality is checked each time we attempt to commit the code and commit is
 prevented if the pre-defined standards are not met. This ensures that only
 quality code gets staged and is pushed to the repository.
 
+Currently we are using four packages in our hooks to format and lint our code.
+The packages included are as follows in the same sequence as here:
+1. [Black](https://github.com/psf/black) - automatically formats each python file as much as possible
+2. [isort](https://github.com/pycqa/isort) - automatically sorts imports alphabetically, separated into sections and by type
+3. [flake8](https://gitlab.com/pycqa/flake8) - displays warning in case of violations and code smells
+4. [pylint](https://github.com/pycqa/pylint) - displays warning about code smells, format and even documentaion
+
+The reason black is placed before flake8 and pylint is to make sure they catch as few warnings as possible,
+since black formats everything beforehand.
+
 
 ## Instructions to configure the pre-commit hooks
 
