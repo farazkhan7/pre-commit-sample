@@ -1,5 +1,6 @@
 [flake8]
-    ignore = W503, F403, F401
+    # Uncomment the ignore command below to ignore the checks across the whole repo
+    # ignore = W503, F403, F401
     max-line-length = 80
     max-complexity = 10
     select = B,C,E,F,W,T4,B9
